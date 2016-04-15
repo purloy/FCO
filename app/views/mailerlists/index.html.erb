@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<% @mcluster.each do |m| %>
+  <a class="btn btn-primary btn-lg active" role="button"><%= m.cluster_name %></a>
+<% end %>
+<br>
+<br>
+<br>
+
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class = "table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Mailername</th>
+          <th>Mailertype</th>
+          <th>Description</th>
+          <th>Recepient</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @mailerlists.each do |mailerlist| %>
+          <tr>
+            <td><%= mailerlist.mailername.mailer_name %></td>
+            <td><%= mailerlist.mailertype.mailer_type %></td>
+            <td><%= mailerlist.description %></td>
+            <td><%= mailerlist.recepient %></td>
+            <td><%= link_to 'Edit', edit_mailerlist_path(mailerlist) %></td>
+            <td><%= link_to 'Destroy', mailerlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Compose', new_usermailer_path %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class = "table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th><%= check_box "tag", "enabled", {}, "1", "0" %></th>
+          <th>Cluster name</th>
+          <th>Feature</th>
+          <th>Members</th>
+          <th colspan ="2">Action</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @mclusters.each do |mcluster| %>
+          <tr>
+            <td><%= check_box "tag", "enabled", {}, "1", "0" %></td>
+            <td><%= mcluster.cluster_name %></td>
+            <td><%= mcluster.feature %></td>
+            <td><%= mcluster.members %></td>
+            <td><%= link_to 'Edit', edit_mcluster_path(mcluster) %>  </t>
+            <td><%= link_to 'Destroy', mcluster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+

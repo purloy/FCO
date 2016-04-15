@@ -1,0 +1,43 @@
+
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+
+    <table class = "table table-bordered table-striped">
+
+		<thead>
+
+			<tr>
+				<th>Id</th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>User type</th>
+				<th>Email </th>
+				<th colspan="2">Action</th>
+			</tr>
+			
+		</thead>
+
+		<% @userlist.each do | userlist | %>
+
+		<tbody>
+
+				<tr>
+
+					<td><%= userlist.id %></td>
+					<td><%= userlist.first_name %></td>
+					<td><%= userlist.last_name %></td>
+					<td><%= userlist.typeofuser.user_type %></td>
+					<td><%= userlist.work_email %></td>
+					<td><%= link_to 'Edit', edit_userlist_path(userlist) %></td>
+					<td><%= link_to 'Delete', userlist, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+
+				</tr>
+
+		</tbody>
+
+		<% end %>
+
+		</table>
+	</div>
+</div>

@@ -1,0 +1,2 @@
+module MailernamesHelper
+end

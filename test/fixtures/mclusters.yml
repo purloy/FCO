@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cluster_name: MyString
+  feature: false
+  members: 1
+
+two:
+  cluster_name: MyString
+  feature: false
+  members: 1

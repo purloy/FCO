@@ -1,0 +1,30 @@
+<%= tinymce %>
+<%= form_for @usermail, :url => url_for(:controller => 'usermailer', :action => 'create' ) do |f| %>
+  <% if @usermail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usermail.errors.count, "error") %> prohibited this usermail from being saved:</h2>
+
+      <ul>
+      <% @usermail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :send_from, "from" %><br>
+    <%= f.text_field :send_from, :value => "FCO" %>
+  </div>
+  <div class="field">
+    <%= f.label :send_to, "to" %><br>
+    <%= f.text_field :send_to %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content,  :class => "tinymce",  :rows => 20, :cols => 120 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

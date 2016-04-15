@@ -1,0 +1,19 @@
+<h1>Editing Mailerlist</h1>
+
+<%= simple_form_for @mailerlist, :html => { :multipart => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%= f.select :mailername_id, @mailername %>
+    <%= f.select :mailertype_id, @mailertype %>
+    <%= f.input :description %>
+    <%= f.input :recepient %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', mailerlists_path %>

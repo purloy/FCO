@@ -1,0 +1,15 @@
+<%= simple_form_for @report, :html => { :multipart => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= select_tag(:mailername_id, options_for_select(@mailername), :prompt => "Select Event") %>
+    <%= f.input :invite_sent %>
+    <%= f.input :total_recepient %>
+    <%= f.input :attending %>
+    <%= f.input :unable_to_attend %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<%= simple_form_for @userlist, :url => url_for(:controller => 'userlists', :action => 'update' ) do |f| %>
+	<%= f.input :first_name %>
+	<%= f.input :last_name %>
+	<%= f.input :work_email %>
+	<%= f.select :typeofuser_id, @typeofuser %><br />
+	<%= f.hidden_field :cluster_id %>
+	<%= f.button :submit %>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Editing Userdetail</h1>
+<%= simple_form_for @userdetail, :html => { :multipart => true } do |f| %>
+  <div class="form-inputs">
+    <%= f.select :cluster_id, @cluster %>
+    <%= f.input :first_name %>
+    <%= f.input :middle_name %>
+    <%= f.input :last_name %>
+    <%= f.input :salutation %>
+    <%= f.input :organization %>
+    <%= f.input :department %>
+    <%= f.input :work_address %>
+    <%= f.input :work_mobile %>
+    <%= f.input :work_fax %>
+    <%= f.input :work_email %>
+    <%= f.input :work_internet %>
+    <%= f.input :assistant_name %>
+    <%= f.input :assistant_tel_no %>
+    <%= f.input :note %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :nationality %>
+    <%= f.input :event_invited %>
+    <%= f.input :event_attended %>
+    <%= f.hidden_field :typeofuser_id %>
+    <%= f.button :submit %>
+  </div>
+<% end %>
+  
+
+<%= link_to 'Show', @userdetail %> |
+<%= link_to 'Back', userdetails_path %>

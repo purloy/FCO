@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+
+<% @mcluster.each do |m| %>
+
+  <a class="btn btn-primary btn-lg active" role="button"><%= m.cluster_name %></a>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class = "table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th><%= check_box "tag", "enabled", {}, "1", "0" %></th>
+          <th>id</th>
+          <th>First name</th>
+          <th>Middle name</th>
+          <th>Last name</th>
+          <th>Work mobile</th>
+          <th>Work fax</th>
+          <th>Work email</th>
+          <th>Cluster</th>
+
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody class = "table-striped">
+        <% @userdetails.each do | userdetail | %>
+          <tr>
+            <td><%= check_box "tag", "enabled", {}, "1", "0" %></td>
+            <td><%= userdetail.id %></td>
+            <td><%= userdetail.first_name %></td>
+            <td><%= userdetail.middle_name %></td>
+            <td><%= userdetail.last_name %></td>
+            <td><%= userdetail.work_mobile %></td>
+            <td><%= userdetail.work_fax %></td>
+            <td><%= userdetail.work_email %></td>
+            <td><%= userdetail.cluster.cluster %> </td>
+            <td><%= link_to 'Edit', edit_userdetail_path(userdetail) %></td>
+            <td><%= link_to 'Destroy', userdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

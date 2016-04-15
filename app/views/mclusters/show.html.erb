@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cluster name:</strong>
+  <%= @mcluster.cluster_name %>
+</p>
+
+<p>
+  <strong>Feature:</strong>
+  <%= @mcluster.feature %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <%= @mcluster.members %>
+</p>
+
+<%= link_to 'Edit', edit_mcluster_path(@mcluster) %> |
+<%= link_to 'Back', mclusters_path %>

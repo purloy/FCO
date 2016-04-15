@@ -1,0 +1,14 @@
+<%= simple_form_for @mailerlist, :html => { :multipart => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+     <%= select_tag(:mailername_id, options_for_select(@mailername), :prompt => "Select a Category") %> <br /><br />
+     <%= select_tag(:mailertype_id, options_for_select(@mailertype), :prompt => "Select a Category") %>
+    <%= f.input :description %>
+    <%= f.input :recepient %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyProject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class = "row">
+
+	<div class = "navbar navbar-default alert-info">
+		<div class = "container">
+			<ul class = "nav navbar-nav">
+
+				<% if user_signed_in? %>
+					<% if current_user.admin == true %>
+						<li><%= link_to 'Home', userdetails_path %></li>
+						<li><%= link_to 'User', userlists_path %></li>
+						<li><%= link_to 'Cluster', mclusters_path %></li>
+						<li><%= link_to 'Mailer', mailerlists_path %></li>
+						<li><%= link_to 'Report', reports_path %></li>
+
+
+					<% else %>
+						<li><%= link_to 'User', userlists_path %></li>
+						<li><%= link_to 'Cluster', mclusters_path %></li>
+						<li><%= link_to 'Report', reports_path %></li>
+
+					<% end %>
+
+				<% end %>
+
+			</ul>
+
+<% if user_signed_in? %>
+				<ul class = "nav navbar-nav navbar-right">
+					
+						
+
+							<li class ="text"><a>Signed in as Admin</a></li>
+						
+					
+
+					<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+				</ul>
+
+<% end %>
+		</div>
+
+	</div>
+
+
+	<div class = "container">
+
+		<%= yield %>
+
+	</div>
+</div>
+
+</body>
+</html>

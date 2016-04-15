@@ -1,0 +1,30 @@
+<%= simple_form_for @userdetail, :html => { :multipart => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= select_tag(:cluster_id, options_for_select(@cluster), :prompt => "Select a Category") %>
+    <%= select_tag(:typeofuser_id, options_for_select(@typeofuser), :prompt => "Select a Category") %>
+    <%= f.input :first_name %>
+    <%= f.input :middle_name %>
+    <%= f.input :last_name %>
+    <%= f.input :salutation %>
+    <%= f.input :organization %>
+    <%= f.input :department %>
+    <%= f.input :work_address %>
+    <%= f.input :work_mobile %>
+    <%= f.input :work_fax %>
+    <%= f.input :work_email %>
+    <%= f.input :work_internet %>
+    <%= f.input :assistant_name %>
+    <%= f.input :assistant_tel_no %>
+    <%= f.input :note %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :nationality %>
+    <%= f.input :event_invited %>
+    <%= f.input :event_attended %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
