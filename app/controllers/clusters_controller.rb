@@ -1,5 +1,8 @@
 class ClustersController < ApplicationController
+	def index
 
+	end
+	
 	def new
 
 	end
