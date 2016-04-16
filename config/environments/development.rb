@@ -37,19 +37,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.action_mailer.default_url_options = { :host => 'portal.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
 
-       :host                   => 'smtp.gmail.com',
-       :port                   => 587,
-       :domain                 => 'gmail.com',
-       :username               => 'darren.dalino30@gmail.com',
-       :password               => 'akocdarren1',
-       :authentication         => 'plain',
-       :enable_starttls_auto   => true
-
-  }
 
   
  
