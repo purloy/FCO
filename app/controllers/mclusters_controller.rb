@@ -4,17 +4,29 @@ class MclustersController < ApplicationController
   # GET /mclusters
   # GET /mclusters.json
   def index
-    @mclusters = Mcluster.all
+
+    if user_signed_in?
+
+      @mclusters = Mcluster.all
+
+    else
+
+      redirect_to new_user_session_path
+
+    end
+
   end
 
   # GET /mclusters/1
   # GET /mclusters/1.json
   def show
+
   end
 
   # GET /mclusters/new
   def new
-    @mcluster = Mcluster.new
+    redirect_to mclusters_path
+    #@mcluster = Mcluster.new
   end
 
   # GET /mclusters/1/edit

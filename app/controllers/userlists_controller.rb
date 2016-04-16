@@ -3,7 +3,12 @@ class UserlistsController < UserdetailsController
 	before_action :set_userlist, only: [:show, :edit, :update, :destroy]
 	
 	def index
-		@userlist = Userdetail.all
+		if user_signed_in?
+			@userlist = Userdetail.all
+		else
+			redirect_to new_user_session_path
+		end
+
 	end
 
 	def show

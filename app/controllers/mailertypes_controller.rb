@@ -4,17 +4,20 @@ class MailertypesController < ApplicationController
   # GET /mailertypes
   # GET /mailertypes.json
   def index
-    @mailertypes = Mailertype.all
+    redirect_to mailerlists_path
+    #@mailertypes = Mailertype.all
   end
 
   # GET /mailertypes/1
   # GET /mailertypes/1.json
   def show
+
   end
 
   # GET /mailertypes/new
   def new
-    @mailertype = Mailertype.new
+    redirect_to mailerlists_path
+    #@mailertype = Mailertype.new
   end
 
   # GET /mailertypes/1/edit

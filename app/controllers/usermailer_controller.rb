@@ -1,11 +1,22 @@
 class UsermailerController < ApplicationController
 	before_action :set_usermailer, only: [:show]
   def index
-  	@usermail = Sendmail.new
+
+    if user_signed_in?
+
+  	 @usermail = Sendmail.new
+
+    else
+
+      redirect_to new_user_session_path
+
+    end
+
   end
 
   def new
-    @usermail = Sendmail.new
+    redirect_to usermailers_path
+    #@usermail = Sendmail.new
   end
 
   def show

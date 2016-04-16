@@ -4,11 +4,13 @@ class UserdetailsController < ApplicationController
   # GET /userdetails
   # GET /userdetails.json
   def index
-    if params[:userdetail].blank?
+   if user_signed_in?
     @userdetails = Userdetail.all
     @mcluster = Mcluster.all
   else
+    redirect_to new_user_session_path
   end
+ 
   end
 
   # GET /userdetails/1
@@ -19,9 +21,10 @@ class UserdetailsController < ApplicationController
 
   # GET /userdetails/new
   def new
-    @userdetail = Userdetail.new
-    @cluster = Cluster.all.map{ |c| [c.cluster, c.id]}
-    @typeofuser = Typeofuser.all.map{ |t| [t.user_type, t.id] }
+    redirect_to userdetails_path
+    #@userdetail = Userdetail.new
+    #@cluster = Cluster.all.map{ |c| [c.cluster, c.id]}
+    #@typeofuser = Typeofuser.all.map{ |t| [t.user_type, t.id] }
   end
 
   # GET /userdetails/1/edit

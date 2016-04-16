@@ -4,7 +4,8 @@ class MailernamesController < ApplicationController
   # GET /mailernames
   # GET /mailernames.json
   def index
-    @mailernames = Mailername.all
+    redirect_to mailerlists_path
+    #@mailernames = Mailername.all
   end
 
   # GET /mailernames/1
@@ -14,7 +15,8 @@ class MailernamesController < ApplicationController
 
   # GET /mailernames/new
   def new
-    @mailername = Mailername.new
+    redirect_to mailerlists_path
+    #@mailername = Mailername.new
   end
 
   # GET /mailernames/1/edit

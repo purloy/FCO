@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    redirect_to mailerlists_path
+    #@events = Event.all
   end
 
   # GET /events/1
@@ -14,7 +15,8 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    redirect_to mailerlists_path
+    #@event = Event.new
   end
 
   # GET /events/1/edit

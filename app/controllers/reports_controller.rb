@@ -5,19 +5,29 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
+    if user_signed_in?
     @reports = Report.all
     @mcluster = Mcluster.all
+    else
+      redirect_to redirect_to new_user_session_path
+    end
   end
 
   # GET /reports/1
   # GET /reports/1.json
   def show
+
   end
 
   # GET /reports/new
   def new
-    @report = Report.new
-    @mailername = Mailername.all.map{ |mn| [mn.mailer_name, mn.id] }
+    if user_signed_in?
+    redirect_to reports_path
+    else
+    redirect_to reports_path
+    end
+    #@report = Report.new
+    #@mailername = Mailername.all.map{ |mn| [mn.mailer_name, mn.id] }
   end
 
   # GET /reports/1/edit

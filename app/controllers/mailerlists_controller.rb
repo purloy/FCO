@@ -4,8 +4,18 @@ class MailerlistsController < ApplicationController
   # GET /mailerlists
   # GET /mailerlists.json
   def index
-    @mailerlists = Mailerlist.all
-    @mcluster = Mcluster.all
+
+    if user_signed_in?
+
+      @mailerlists = Mailerlist.all
+      @mcluster = Mcluster.all
+
+    else
+
+      redirect_to new_user_session_path
+
+    end
+
   end
 
   # GET /mailerlists/1
@@ -15,9 +25,10 @@ class MailerlistsController < ApplicationController
 
   # GET /mailerlists/new
   def new
-    @mailerlist = Mailerlist.new
-    @mailername = Mailername.all.map{ |mn| [mn.mailer_name, mn.id] }
-    @mailertype = Mailertype.all.map{ |mt| [mt.mailer_type, mt.id] }
+    redirect_to mailerlists_path
+    #@mailerlist = Mailerlist.new
+    #@mailername = Mailername.all.map{ |mn| [mn.mailer_name, mn.id] }
+    #@mailertype = Mailertype.all.map{ |mt| [mt.mailer_type, mt.id] }
     
   end
 
