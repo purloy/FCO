@@ -1,7 +1,7 @@
 class Usermailer < ApplicationMailer
 
 	default to: 'Foreign Commonwealth Office'
-
+	@url = "http://portal.herokuapp.com/login"
 	def sendemail(sendmail)
 		@usermail = sendmail
 
