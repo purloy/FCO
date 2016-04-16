@@ -4,6 +4,7 @@ class UserdetailsController < ApplicationController
   # GET /userdetails
   # GET /userdetails.json
   def index
+    
    if user_signed_in?
     @userdetails = Userdetail.all
     @mcluster = Mcluster.all

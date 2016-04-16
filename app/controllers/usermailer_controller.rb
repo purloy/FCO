@@ -15,6 +15,7 @@ class UsermailerController < ApplicationController
   end
 
   def new
+    
     redirect_to usermailers_path
     #@usermail = Sendmail.new
   end
