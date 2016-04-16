@@ -51,7 +51,7 @@ Rails.application.configure do
 
   }
 
-  config.action_mailer.default_url_options = { :host => 'calm-caverns-77486.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'portal.herokuapp.com' }
  
 
   # Raises error for missing translations
