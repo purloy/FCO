@@ -41,7 +41,7 @@ class UsermailerController < ApplicationController
   	Usermailer.sendemail(@usermail).deliver_now
   	respond_to do |format|
   		if @usermail.save
-  			format.html { redirect_to usermailer_path(@usermail), notice: 'Succesful'}
+  			format.html { redirect_to mailerlists_path, notice: 'Succesful'}
   			format.json { render :new, status: :sent }
   		else
   			format.html { render :new }
