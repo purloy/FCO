@@ -15,9 +15,20 @@ class UsermailerController < ApplicationController
   end
 
   def new
-    
-    redirect_to usermailers_path
-    #@usermail = Sendmail.new
+
+    if user_signed_in?
+
+      if current_user.admin == true
+
+        @usermail = Sendmail.new
+
+      end
+
+    else
+
+      redirect_to new_user_session_path
+
+    end
   end
 
   def show
