@@ -29,7 +29,7 @@
             <td><%= mailerlist.description %></td>
             <td><%= mailerlist.recepient %></td>
             <td><%= link_to 'Edit', edit_mailerlist_path(mailerlist) %></td>
-            <td><%= link_to 'Destroy', mailerlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', mailerlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <td><%= link_to 'Compose', new_usermailer_path %></td>
           </tr>
         <% end %>
