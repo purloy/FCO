@@ -74,8 +74,8 @@ Rails.application.configure do
     domain: "calm-caverns-77486.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: darren.dalino30@gmail.com,
-    password: akocdarren1
+    user_name: 'darren.dalino30@gmail.com',
+    password: 'akocdarren1'
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
