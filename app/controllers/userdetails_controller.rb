@@ -6,11 +6,13 @@ class UserdetailsController < ApplicationController
   def index
     
    if user_signed_in?
-    @userdetails = Userdetail.all
-    @mcluster = Mcluster.all
-  else
+  
+      @userdetails = Userdetail.search(params[:search])
+      @mcluster = Mcluster.all
+  
+    else
     redirect_to new_user_session_path
-  end
+   end
  
   end
 
