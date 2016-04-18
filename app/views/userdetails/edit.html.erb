@@ -1,28 +1,115 @@
-<h1>Editing Userdetail</h1>
-<%= simple_form_for @userdetail, :html => { :multipart => true } do |f| %>
+
+<%= simple_form_for @userdetail, :class => 'form_horizontal', :html => { :multipart => true } do |f| %>
   <div class="form-inputs">
-    <%= f.select :cluster_id, @cluster %>
-    <%= f.input :first_name %>
-    <%= f.input :middle_name %>
-    <%= f.input :last_name %>
-    <%= f.input :salutation %>
-    <%= f.input :organization %>
-    <%= f.input :department %>
-    <%= f.input :work_address %>
-    <%= f.input :work_mobile %>
-    <%= f.input :work_fax %>
-    <%= f.input :work_email %>
-    <%= f.input :work_internet %>
-    <%= f.input :assistant_name %>
-    <%= f.input :assistant_tel_no %>
-    <%= f.input :note %>
-    <%= f.input :date_of_birth %>
-    <%= f.input :nationality %>
-    <%= f.input :event_invited %>
-    <%= f.input :event_attended %>
-    <%= f.hidden_field :typeofuser_id %>
-    <%= f.button :submit %>
+        <div class="container-fluid">
+          <div class = "row">
+            <div class="col-md-6">
+
+                <div class = 'form-group'>
+                    <%= f.label :cluster_id, 'Cluster: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.select :cluster_id, @cluster, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :first_name, 'First Name: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :first_name, :class => 'text-size' %>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :middle_name, 'Middle Name: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :middle_name, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :last_name, 'Last Name: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :last_name, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :salutation, 'Salutation: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :salutation, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :organization, 'Organization: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :organization, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :department, 'Department: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :department, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :work_address, 'Work Address: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :work_address, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :work_mobile, 'Work Mobile: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :work_mobile, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :work_fax, 'Work Fax: ', :class => 'col-sm-3 control-label' %>
+                    <%= f.text_field :work_fax, :class => 'text-size' %><br/>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class = 'form-group'>
+                    <%= f.label :work_email, 'Work Email: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :work_email, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :work_internet, 'Work Internet: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :work_internet , :class => 'text-size'%><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :assistant_name, 'Assistant Name: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :assistant_name, :class => 'text-size' %><br/>
+                </div>  
+
+                <div class = 'form-group'>
+                    <%= f.label :assistant_tel_no, 'Assistant Tel No.: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :assistant_tel_no, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :note, 'Note: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :note, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :date_of_birth, 'Date of Birth: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :date_of_birth, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :nationality, 'Nationality: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :nationality, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :event_invited, 'Event Invited: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :event_invited, :class => 'text-size' %><br/>
+                </div>
+
+                <div class = 'form-group'>
+                    <%= f.label :event_attended, 'Event Attended: ', :class => 'col-sm-4 control-label' %>
+                    <%= f.text_field :event_attended, :class => 'text-size' %><br/>
+                </div>
+                
+                    <%= f.hidden_field :typeofuser_id %><br/>
+                    
+              </div>
+           </div>
+        </div>
+
   </div>
+  <%= f.button :submit %>
 <% end %>
   
 
