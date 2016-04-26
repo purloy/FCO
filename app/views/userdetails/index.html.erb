@@ -1,8 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= simple_form_for userdetails_path, method: :get do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag 'Search', :name => nil%>
-<% end %>
 
 <% @mcluster.each do |m| %>
 
@@ -14,10 +10,15 @@
 <br>
 
 <div class="panel panel-primary">
+
   <div class="panel-body">
+
     <table class = "table table-bordered table-striped">
+
       <thead>
+
         <tr>
+
           <th><%= check_box "tag", "enabled", {}, "1", "0" %></th>
           <th>id</th>
           <th>First name</th>
@@ -29,12 +30,18 @@
           <th>Cluster</th>
 
           <th colspan="2">Action</th>
+
         </tr>
+
       </thead>
 
+
       <tbody class = "table-striped">
+
         <% @userdetails.each do | userdetail | %>
+
           <tr>
+
             <td><%= check_box "tag", "enabled", {}, "1", "0" %></td>
             <td><%= userdetail.id %></td>
             <td><%= userdetail.first_name %></td>
@@ -46,11 +53,16 @@
             <td><%= userdetail.cluster.cluster %> </td>
             <td><%= link_to 'Edit', edit_userdetail_path(userdetail) %></td>
             <td><%= link_to 'Delete', userdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
           </tr>
         <% end %>
+
       </tbody>
+
     </table>
+
   </div>
+  
 </div>
 
 

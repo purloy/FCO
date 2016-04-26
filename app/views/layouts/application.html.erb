@@ -11,11 +11,15 @@
 <div class = "row">
 
 	<div class = "navbar navbar-default alert-info">
+
 		<div class = "container">
+
 			<ul class = "nav navbar-nav">
 
 				<% if user_signed_in? %>
+
 					<% if current_user.admin == true %>
+
 						<li><%= link_to 'Home', userdetails_path %></li>
 						<li><%= link_to 'User', userlists_path %></li>
 						<li><%= link_to 'Cluster', mclusters_path %></li>
@@ -24,6 +28,7 @@
 
 
 					<% else %>
+
 						<li><%= link_to 'User', userlists_path %></li>
 						<li><%= link_to 'Cluster', mclusters_path %></li>
 						<li><%= link_to 'Report', reports_path %></li>
@@ -34,35 +39,44 @@
 
 			</ul>
 
-    <form class="navbar-form navbar-left" role="search">
 
-		<%= simple_form_for userdetails_path, method: :get do %>
+	<% if user_signed_in? %>
 
-			<div class="form-group">
+		<% if current_user.admin == true %>
 
-  				<%= text_field_tag :search, params[:search], class: "form-control" %>
-  				
-  			</div>
+		    <form class="navbar-form navbar-left" role="search">
 
-  				<%= submit_tag 'Search', class: "btn btn-default", :name => nil%>
+				<%= simple_form_for userdetails_path, method: :get do %>
+
+					<div class="form-group">
+
+		  				<%= text_field_tag :search, params[:search], class: "form-control" %>
+		  				
+		  			</div>
+
+		  				<%= submit_tag 'Search', class: "btn btn-default", :name => nil%>
+
+				<% end %>
+
+			</form>
 
 		<% end %>
-		
-	</form>
 
-<% if user_signed_in? %>
+	<% end %>
+
+
+		<% if user_signed_in? %>
+
 				<ul class = "nav navbar-nav navbar-right">
-					
-						
 
 							<li class ="text"><a>Signed in as Admin</a></li>
-						
-					
 
 					<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+					
 				</ul>
 
-<% end %>
+		<% end %>
+
 		</div>
 
 	</div>
