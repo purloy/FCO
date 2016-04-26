@@ -35,7 +35,6 @@ class UserdetailsController < ApplicationController
     @cluster = Cluster.all.map{ |c| [c.cluster, c.id]}
     @typeofuser = Typeofuser.all.map{ |t| [t.user_type, t.id] }
   end
-
   # POST /userdetails
   # POST /userdetails.json
   def create

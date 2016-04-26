@@ -34,6 +34,22 @@
 
 			</ul>
 
+    <form class="navbar-form navbar-left" role="search">
+
+		<%= simple_form_for userdetails_path, method: :get do %>
+
+			<div class="form-group">
+
+  				<%= text_field_tag :search, params[:search], class: "form-control" %>
+  				
+  			</div>
+
+  				<%= submit_tag 'Search', class: "btn btn-default", :name => nil%>
+
+		<% end %>
+		
+	</form>
+
 <% if user_signed_in? %>
 				<ul class = "nav navbar-nav navbar-right">
 					
